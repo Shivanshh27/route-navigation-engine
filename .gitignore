@@ -1,0 +1,115 @@
+############################
+# Node.js / MERN / Next.js #
+############################
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+.next/
+out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files (VERY IMPORTANT)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Cache
+.cache/
+.npm/
+.eslintcache
+
+####################
+# React / Frontend #
+####################
+
+# Vite
+.vite/
+
+# Parcel
+.parcel-cache/
+
+####################
+# Backend / Server #
+####################
+
+# Uploads / temp files
+uploads/
+tmp/
+temp/
+
+####################
+# C++ / DSA / CP   #
+####################
+
+# Compiled binaries
+a.out
+*.exe
+*.o
+*.obj
+*.class
+
+# Debug files
+*.dSYM/
+
+####################
+# IDEs & Editors   #
+####################
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# IntelliJ / WebStorm
+.idea/
+
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+####################
+# OS Files         #
+####################
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+####################
+# Git              #
+####################
+
+# Git merge backups
+*.orig
+
+####################
+# Misc             #
+####################
+
+# Coverage
+coverage/
+
+# Test output
+test-results/
+
+# Lock files (optional – keep only ONE)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
