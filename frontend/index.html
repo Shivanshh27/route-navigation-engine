@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route Navigation Engine</title>
+  <meta name="description" content="A high-performance pathfinding visualizer using Dijkstra and A* algorithms.">
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo">
+        <span class="icon">🧭</span>
+        <h1>Route Navigation Engine</h1>
+      </div>
+      <p class="subtitle">High-performance pathfinding visualizer powered by C++, Node.js & Redis</p>
+    </header>
+
+    <!-- Main Content Layout -->
+    <main class="app-content">
+      <!-- Sidebar Panel -->
+      <section class="control-panel glass-card">
+        <h2 class="panel-title">Path Configuration</h2>
+        
+        <form id="route-form">
+          <!-- Algorithm Selection -->
+          <div class="form-group">
+            <label>Pathfinding Algorithm</label>
+            <div class="algo-toggle-group">
+              <label class="algo-toggle">
+                <input type="radio" name="algo" value="astar" checked>
+                <div class="algo-btn">A* Search</div>
+              </label>
+              <label class="algo-toggle">
+                <input type="radio" name="algo" value="dijkstra">
+                <div class="algo-btn">Dijkstra</div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Start Node Selection -->
+          <div class="form-group">
+            <label for="start-node">Start Node</label>
+            <div class="select-wrapper">
+              <select id="start-node" required>
+                <option value="" disabled selected>Select start node...</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- End Node Selection -->
+          <div class="form-group">
+            <label for="end-node">End Node</label>
+            <div class="select-wrapper">
+              <select id="end-node" required>
+                <option value="" disabled selected>Select end node...</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Compute Button -->
+          <button type="submit" id="compute-btn" class="glow-button">
+            <span>Find Shortest Path</span>
+            <div class="shimmer"></div>
+          </button>
+        </form>
+
+        <!-- Metrics & Output Display -->
+        <div class="metrics-panel">
+          <h3 class="panel-subtitle">Computation Metrics</h3>
+          
+          <div class="metric-row">
+            <span class="metric-label">Execution Time</span>
+            <span id="metric-time" class="metric-value">--</span>
+          </div>
+
+          <div class="metric-row">
+            <span class="metric-label">Cache Status</span>
+            <span id="metric-cache" class="badge">--</span>
+          </div>
+
+          <div class="metric-row path-row">
+            <span class="metric-label">Computed Path</span>
+            <div id="metric-path" class="path-sequence">--</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Graph Visualization Area -->
+      <section class="visualizer-container glass-card">
+        <div class="canvas-header">
+          <div class="canvas-title">
+            <span class="status-indicator"></span>
+            <h3>Interactive Network Map</h3>
+          </div>
+          <div class="canvas-hints">
+            <span>💡 Click nodes directly to select Start/End</span>
+          </div>
+        </div>
+        
+        <div class="canvas-wrapper">
+          <canvas id="graph-canvas"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,11 +1,74 @@
 {
   "nodes": [
-    { "id": 0, "x": 0, "y": 0 },
-    { "id": 1, "x": 1, "y": 0 },
-    { "id": 2, "x": 2, "y": 0 }
+    { "id": 0, "x": 1, "y": 1 },
+    { "id": 1, "x": 3, "y": 1 },
+    { "id": 2, "x": 5, "y": 1 },
+    { "id": 3, "x": 7, "y": 1 },
+    { "id": 4, "x": 2, "y": 3 },
+    { "id": 5, "x": 4, "y": 3 },
+    { "id": 6, "x": 6, "y": 3 },
+    { "id": 7, "x": 8, "y": 3 },
+    { "id": 8, "x": 1, "y": 5 },
+    { "id": 9, "x": 3, "y": 5 },
+    { "id": 10, "x": 5, "y": 5 },
+    { "id": 11, "x": 7, "y": 5 },
+    { "id": 12, "x": 9, "y": 5 },
+    { "id": 13, "x": 2, "y": 7 },
+    { "id": 14, "x": 4, "y": 7 },
+    { "id": 15, "x": 6, "y": 7 },
+    { "id": 16, "x": 8, "y": 7 },
+    { "id": 17, "x": 3, "y": 9 },
+    { "id": 18, "x": 6, "y": 9 },
+    { "id": 19, "x": 9, "y": 9 }
   ],
+
   "edges": [
-    { "from": 0, "to": 1, "weight": 1 },
-    { "from": 1, "to": 2, "weight": 1 }
+    { "from": 0, "to": 1, "weight": 4 },
+    { "from": 1, "to": 2, "weight": 3 },
+    { "from": 2, "to": 3, "weight": 5 },
+
+    { "from": 0, "to": 4, "weight": 6 },
+    { "from": 1, "to": 5, "weight": 4 },
+    { "from": 2, "to": 6, "weight": 5 },
+    { "from": 3, "to": 7, "weight": 6 },
+
+    { "from": 4, "to": 5, "weight": 2 },
+    { "from": 5, "to": 6, "weight": 2 },
+    { "from": 6, "to": 7, "weight": 2 },
+
+    { "from": 4, "to": 8, "weight": 4 },
+    { "from": 5, "to": 9, "weight": 5 },
+    { "from": 6, "to": 10, "weight": 3 },
+    { "from": 7, "to": 12, "weight": 5 },
+
+    { "from": 8, "to": 9, "weight": 3 },
+    { "from": 9, "to": 10, "weight": 2 },
+    { "from": 10, "to": 11, "weight": 3 },
+    { "from": 11, "to": 12, "weight": 2 },
+
+    { "from": 8, "to": 13, "weight": 6 },
+    { "from": 9, "to": 14, "weight": 4 },
+    { "from": 10, "to": 15, "weight": 5 },
+    { "from": 11, "to": 16, "weight": 4 },
+
+    { "from": 13, "to": 14, "weight": 2 },
+    { "from": 14, "to": 15, "weight": 3 },
+    { "from": 15, "to": 16, "weight": 2 },
+
+    { "from": 13, "to": 17, "weight": 5 },
+    { "from": 15, "to": 18, "weight": 4 },
+    { "from": 16, "to": 19, "weight": 5 },
+
+    { "from": 17, "to": 18, "weight": 3 },
+    { "from": 18, "to": 19, "weight": 4 },
+
+    { "from": 1, "to": 4, "weight": 5 },
+    { "from": 2, "to": 5, "weight": 2 },
+    { "from": 5, "to": 10, "weight": 4 },
+    { "from": 6, "to": 11, "weight": 3 },
+    { "from": 10, "to": 14, "weight": 4 },
+    { "from": 11, "to": 15, "weight": 2 },
+    { "from": 14, "to": 18, "weight": 3 },
+    { "from": 12, "to": 19, "weight": 6 }
   ]
 }
