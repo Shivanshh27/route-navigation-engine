@@ -1,9 +1,43 @@
 const express = require("express");
 const { execFile } = require("child_process");
 const { createClient } = require("redis");
+const fs = require("fs");
+const path = require("path");
 
 const app = express();
 app.use(express.json());
+
+// Enable CORS
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
+// Serve frontend static files
+app.use(express.static(path.join(__dirname, "../../frontend")));
+
+// Serve graph data
+app.get("/graph", (req, res) => {
+  const graphPath = path.join(__dirname, "../../data/graph.json");
+  fs.readFile(graphPath, "utf8", (err, data) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ error: "Failed to read graph data" });
+    }
+    try {
+      const graph = JSON.parse(data);
+      res.json(graph);
+    } catch (parseErr) {
+      console.error(parseErr);
+      res.status(500).json({ error: "Failed to parse graph data" });
+    }
+  });
+});
 
 // Redis setup
 const redis = createClient({

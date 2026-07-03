@@ -150,7 +150,8 @@ body {
 
 /* Custom Segmented Algorithm Selector Toggle */
 .algo-toggle-group {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   background: rgba(15, 23, 42, 0.6);
   border: 1px solid var(--border-card);
   padding: 4px;
