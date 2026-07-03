@@ -19,6 +19,11 @@ void Graph::loadFromFile(const string &filename) {
             sscanf(line.c_str(),
                    " %*[^0-9]%d%*[^0-9]%lf%*[^0-9]%lf",
                    &id, &x, &y);
+            if (id >= n) {
+                n = id + 1;
+                nodes.resize(n);
+                adj.resize(n);
+            }
             nodes[id] = {x, y};
         }
 
@@ -27,7 +32,14 @@ void Graph::loadFromFile(const string &filename) {
             sscanf(line.c_str(),
                    " %*[^0-9]%d%*[^0-9]%d%*[^0-9]%d",
                    &from, &to, &weight);
+            int maxId = max(from, to);
+            if (maxId >= n) {
+                n = maxId + 1;
+                nodes.resize(n);
+                adj.resize(n);
+            }
             adj[from].push_back({to, weight});
+            adj[to].push_back({from, weight}); // Enable bidirectional movement
         }
     }
 }
